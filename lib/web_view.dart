@@ -28,6 +28,7 @@ class _WebScreenState extends State<WebScreen> {
       webViewController.goBack();
       return false;
     } else {
+      Navigator.pop(context);
       return true;
     }
   }
