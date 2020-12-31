@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:how_to_crack_ssb/testimonials_screen.dart';
 import 'package:how_to_crack_ssb/web_view.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -35,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                           'https://school.howtocrackssb.com/courses');
                     }));
                   },
-                  title: 'Glimpse of SSB recommendation Kit'),
+                  title: 'Glimpse Of SSB Recommendation Kit'),
               CustomButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (_) {
@@ -52,9 +53,16 @@ class HomeScreen extends StatelessWidget {
                         'https://onlinetraining.howtocrackssb.com/webinar-registration1607577155945');
                   }));
                 },
-                title: 'Enquire  For enrollment ',
+                title: 'Enquire  For Enrollment ',
                 subtitle: 'For New IAF Aspirant',
               ),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return TestimonialsScreen();
+                    }));
+                  },
+                  title: 'IAF Aspirants Testimonials'),
             ],
           ),
         ));
@@ -79,10 +87,10 @@ class CustomButton extends StatelessWidget {
         child: Container(
           width: double.infinity,
           padding: EdgeInsets.all(16),
-          margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          margin: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
           decoration: BoxDecoration(
-              // color: const Color(0xff2b3636),
-              borderRadius: BorderRadius.circular(8),
+              color: const Color(0xff2b3636),
+              borderRadius: BorderRadius.circular(12),
               border: Border.all(
                   color: const Color(0xff2b3636),
                   width: 3,
@@ -95,7 +103,8 @@ class CustomButton extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: const Color(0xff2b3636)),
+                    //color: const Color(0xff2b3636)
+                    color: Colors.white),
               ),
               subtitle != null
                   ? Column(
@@ -105,7 +114,8 @@ class CustomButton extends StatelessWidget {
                         ),
                         Text(
                           subtitle ?? '',
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          style:
+                              TextStyle(fontSize: 16, color: Colors.grey[400]),
                         ),
                       ],
                     )
