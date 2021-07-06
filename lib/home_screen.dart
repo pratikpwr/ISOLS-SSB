@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:how_to_crack_ssb/testimonials_screen.dart';
 import 'package:how_to_crack_ssb/web_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -63,9 +66,47 @@ class HomeScreen extends StatelessWidget {
                     }));
                   },
                   title: 'IAF Aspirants Testimonials'),
+              TextButton(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'For any Issues Message us on   ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 16, color: const Color(0xff2b3636)),
+                    ),
+                    Image.asset(
+                      'assets/whatsapp_logo.png',
+                      height: 24,
+                      width: 24,
+                      // color: const Color(0xff2b3636),
+                    )
+                  ],
+                ),
+                onPressed: () {
+                  launchWhatsApp();
+                },
+              )
             ],
           ),
         ));
+  }
+
+  void launchWhatsApp() async {
+    String url() {
+      if (Platform.isIOS) {
+        return 'whatsapp://wa.me/+919999888054';
+      } else {
+        return 'whatsapp://send?phone=+919999888054';
+      }
+    }
+
+    if (await canLaunch(url())) {
+      await launch(url());
+    } else {
+      throw 'Could not launch ${url()}';
+    }
   }
 }
 

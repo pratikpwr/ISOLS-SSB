@@ -3,7 +3,7 @@ description: How to Crack SSB - ISOLS Group
 
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -14,7 +14,7 @@ dependencies:
 
   webview_flutter: ^1.0.7
   youtube_player_flutter: ^7.0.0+7
-  cupertino_icons: ^1.0.0
+  url_launcher: ^5.7.10
 
 dev_dependencies:
   flutter_test:
